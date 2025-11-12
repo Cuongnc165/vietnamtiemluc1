@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Header from "@/components/header"
-import SidebarNav from "@/components/sidebar-nav"
-import MilitaryStrength from "@/components/military-strength"
-import Footer from "@/components/footer"
+import { motion } from "framer-motion";
+import Header from "@/components/header";
+import SidebarNav from "@/components/sidebar-nav";
+import MilitaryStrength from "@/components/military-strength";
+import Footer from "@/components/footer";
 
 export default function MilitaryPage() {
   return (
@@ -13,134 +13,193 @@ export default function MilitaryPage() {
       <div className="flex">
         <SidebarNav activeSection="military" />
         <main className="flex-1">
-          {/* Hero Section with Asymmetric Layout */}
-          <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {/* Left side - Text with animations */}
-                <motion.div
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8 }}
-                  viewport={{ once: true }}
-                  className="space-y-6"
-                >
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <span className="inline-block px-4 py-2 rounded-full bg-red-500/20 border border-red-500/50 text-red-300 text-sm font-medium">
-                      Quốc phòng & An ninh
-                    </span>
-                  </motion.div>
-
-                  <motion.h1
-                    className="text-5xl md:text-6xl font-bold text-white leading-tight"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    viewport={{ once: true }}
-                  >
-                    Năng lực
-                    <br />
-                    <span className="bg-gradient-to-r from-red-400 via-orange-400 to-red-600 bg-clip-text text-transparent">
-                      Quốc phòng
-                    </span>
-                  </motion.h1>
-
-                  <motion.p
-                    className="text-xl text-gray-300 leading-relaxed max-w-xl"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.3 }}
-                    viewport={{ once: true }}
-                  >
-                    Lực lượng vũ trang hiện đại, chiến lược quốc phòng, và năng lực bảo vệ chủ quyền quốc gia.
-                  </motion.p>
-
-                  <motion.div
-                    className="flex gap-4 pt-4"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="glass-dark px-6 py-3 rounded-lg">
-                      <p className="text-red-400 font-bold text-2xl">1B USD</p>
-                      <p className="text-gray-400 text-sm">Ngân sách hàng năm</p>
-                    </div>
-                    <div className="glass-dark px-6 py-3 rounded-lg">
-                      <p className="text-orange-400 font-bold text-2xl">286M USD</p>
-                      <p className="text-gray-400 text-sm">Hợp đồng 2024</p>
-                    </div>
-                  </motion.div>
-                </motion.div>
-
-                {/* Right side - Animated military visualization */}
-                <motion.div
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  viewport={{ once: true }}
-                  className="relative h-96 hidden lg:block"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-orange-500/20 rounded-3xl blur-3xl" />
-                  <div className="absolute inset-0 border border-red-500/30 rounded-3xl" />
-
-                  {/* Animated military elements */}
-                  <motion.div
-                    className="absolute top-1/4 left-1/4 w-32 h-32 border-2 border-red-500/30 rounded-lg"
-                    animate={{ rotate: 45, scale: [1, 1.1, 1] }}
-                    transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
-                  />
-
-                  <motion.div
-                    className="absolute bottom-1/4 right-1/4 w-24 h-24 border-2 border-orange-500/30 rounded-full"
-                    animate={{ rotate: -45, scale: [1, 1.15, 1] }}
-                    transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY }}
-                  />
-
-                  <motion.div
-                    className="absolute top-8 right-8 glass-dark p-4 rounded-xl"
-                    animate={{ y: [0, -10, 0] }}
-                    transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
-                  >
-                    <p className="text-red-400 font-bold">Hiện đại hóa</p>
-                    <p className="text-gray-400 text-sm">Vũ khí Made in VN</p>
-                  </motion.div>
-
-                  <motion.div
-                    className="absolute bottom-8 left-8 glass-dark p-4 rounded-xl"
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, delay: 0.5 }}
-                  >
-                    <p className="text-orange-400 font-bold">16 Hợp đồng</p>
-                    <p className="text-gray-400 text-sm">Triển lãm 2024</p>
-                  </motion.div>
-                </motion.div>
-              </div>
-            </div>
-          </section>
-
-          {/* Content Section */}
+          {/* ===== 1. Tổng kết 4 trụ cột ===== */}
           <section className="py-16 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-7xl mx-auto space-y-12">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
+                className="text-center space-y-6"
               >
-                <MilitaryStrength />
+                <h2 className="text-4xl font-bold text-white">Tổng kết</h2>
+                <img
+                  src="https://special.nhandan.vn/co-do-vi-the-va-uy-tin-quoc-te-cua-Vietnam-khi-buoc-vao-ky-nguyen-vuon-minh/assets/GR7vQqnWtm/vuon-minh-2560-x-1440-px-2560x1440.jpg"
+                  alt="Cơ đồ – Tiềm lực – Vị thế – Uy tín"
+                  className="mx-auto rounded-xl shadow-lg"
+                />
+
+                <div className="space-y-4 max-w-3xl mx-auto text-left">
+                  <p className="text-lg">
+                    <span className="font-bold text-red-400">Cơ đồ:</span>{" "}
+                    <span className="text-gray-300">
+                      Từ một nền kinh tế bao cấp, Việt Nam đã xây dựng được cơ
+                      đồ vững chắc với quy mô kinh tế hàng trăm tỷ USD.
+                    </span>
+                  </p>
+                  <p className="text-lg">
+                    <span className="font-bold text-orange-400">Tiềm lực:</span>{" "}
+                    <span className="text-gray-300">
+                      Cả về kinh tế, xã hội lẫn quốc phòng, đất nước ta đã tích
+                      lũy được nội lực mạnh mẽ, đủ sức chống chịu trước biến
+                      động toàn cầu.
+                    </span>
+                  </p>
+                  <p className="text-lg">
+                    <span className="font-bold text-green-400">Vị thế:</span>{" "}
+                    <span className="text-gray-300">
+                      Việt Nam không còn là người đứng ngoài cuộc, mà đã trở
+                      thành đối tác bình đẳng, có tiếng nói trong các cấu trúc
+                      khu vực và quốc tế.
+                    </span>
+                  </p>
+                  <p className="text-lg">
+                    <span className="font-bold text-blue-400">Uy tín:</span>{" "}
+                    <span className="text-gray-300">
+                      Việt Nam được bạn bè quốc tế tin tưởng, đánh giá là quốc
+                      gia có trách nhiệm, đáng tin cậy và yêu chuộng hòa bình.
+                    </span>
+                  </p>
+                  <p className="text-lg text-gray-300">
+                    Tất cả những yếu tố đó đã tạo nên một Việt Nam{" "}
+                    <span className="font-semibold text-yellow-400">
+                      tự tin – tự chủ – tự cường – hội nhập sâu rộng
+                    </span>
+                    .
+                  </p>
+                </div>
               </motion.div>
             </div>
           </section>
+
+          {/* ===== 2. Vai trò lãnh đạo của Đảng ===== */}
+          <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-900/50">
+            <div className="max-w-7xl mx-auto space-y-12">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="space-y-6"
+              >
+                <h2 className="text-4xl font-bold text-yellow-400 text-center">
+                  Vai trò lãnh đạo của Đảng – Nhân tố quyết định
+                </h2>
+                <div className="space-y-4 max-w-3xl mx-auto text-left text-gray-300">
+                  <p>
+                    Những thành tựu to lớn ấy không phải tự nhiên mà có. Đó là
+                    kết quả của sự lãnh đạo{" "}
+                    <span className="font-bold text-red-400">
+                      đúng đắn, kiên định và sáng tạo
+                    </span>{" "}
+                    của Đảng Cộng sản Việt Nam, đứng đầu là{" "}
+                    <span className="font-bold text-orange-400">
+                      Tổng Bí thư Nguyễn Phú Trọng
+                    </span>
+                    .
+                  </p>
+                  <p>
+                    <span className="font-bold text-green-400">
+                      Tầm nhìn chiến lược:
+                    </span>{" "}
+                    Đảng định hướng phát triển bền vững, độc lập tự chủ gắn với
+                    hội nhập quốc tế sâu rộng, giúp Việt Nam vững vàng vượt qua
+                    khủng hoảng, dịch bệnh và biến động toàn cầu.
+                  </p>
+                  <p>
+                    <span className="font-bold text-blue-400">
+                      Trong sạch và kiên quyết:
+                    </span>{" "}
+                    Công tác xây dựng, chỉnh đốn Đảng cùng phương châm “đốt lò”
+                    chống tham nhũng đã củng cố niềm tin của nhân dân, tạo nền
+                    tảng phát triển lâu dài.
+                  </p>
+                  <p>
+                    <span className="font-bold text-purple-400">
+                      Tầm nhìn dài hạn:
+                    </span>{" "}
+                    Đại hội XIII xác định khát vọng đưa Việt Nam trở thành nước
+                    phát triển, thu nhập cao vào năm 2045, minh chứng cho bản
+                    lĩnh lãnh đạo của Đảng.
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          </section>
+
+          {/* ===== 3. Kết luận – Khẳng định nhận định của Tổng Bí thư ===== */}
+          <section className="py-16 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto space-y-12">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="space-y-6"
+              >
+                <h2 className="text-4xl font-bold text-emerald-400 text-center">
+                  Kết luận – Khẳng định nhận định của Tổng Bí thư
+                </h2>
+                <div className="space-y-4 max-w-3xl mx-auto text-left text-gray-300">
+                  <p>
+                    Từ các dẫn chứng về{" "}
+                    <span className="font-bold text-red-400">
+                      kinh tế, xã hội, đối ngoại và uy tín quốc tế
+                    </span>
+                    , có thể khẳng định rằng:
+                  </p>
+                  <p>
+                    Nhận định của Tổng Bí thư Nguyễn Phú Trọng tại Đại hội XIII
+                    –
+                    <span className="font-semibold text-orange-400">
+                      “Đất nước ta chưa bao giờ có được cơ đồ, tiềm lực, vị thế
+                      và uy tín quốc tế như ngày nay”
+                    </span>{" "}
+                    – là hoàn toàn xác đáng, khách quan và đầy tự hào.
+                  </p>
+                  <p>
+                    Nhìn lại hơn 35 năm Đổi mới, Việt Nam đã vươn lên mạnh mẽ,
+                    từ một đất nước nghèo, bị bao vây cấm vận, trở thành{" "}
+                    <span className="font-bold text-green-400">
+                      quốc gia phát triển năng động, hội nhập sâu rộng và có
+                      trách nhiệm toàn cầu
+                    </span>
+                    .
+                  </p>
+                  <p>
+                    Đây là thành quả của cả dân tộc, minh chứng cho{" "}
+                    <span className="font-bold text-blue-400">
+                      bản lĩnh, trí tuệ và vai trò lãnh đạo của Đảng và Tổng Bí
+                      thư Nguyễn Phú Trọng
+                    </span>
+                    .
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          </section>
+
+          {/* ===== 4. Lời kết – Tinh thần tự hào và khát vọng tương lai ===== */}
+          <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-900/50">
+            <div className="max-w-7xl mx-auto space-y-12 text-center">
+              <motion.div>
+                <p className="text-[48px] text-yellow-400 font-bold leading-relaxed max-w-3xl mx-auto uppercase text-justify">
+                  Tự hào về cơ đồ hôm nay,{" "}
+                  <span className="text-orange-400">
+                    càng phải có trách nhiệm vun đắp cho cơ đồ ngày mai
+                  </span>
+                  .
+                </p>
+              </motion.div>
+            </div>
+          </section>
+
+          {/* ===== Military Strength Visualization Section ===== */}
 
           <Footer />
         </main>
       </div>
     </div>
-  )
+  );
 }
