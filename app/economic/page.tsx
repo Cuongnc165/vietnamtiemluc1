@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Header from "@/components/header"
-import SidebarNav from "@/components/sidebar-nav"
-import EconomicStats from "@/components/economic-stats"
-import ComparisonTool from "@/components/comparison-tool"
-import Footer from "@/components/footer"
+import { motion } from "framer-motion";
+import Header from "@/components/header";
+import SidebarNav from "@/components/sidebar-nav";
+import EconomicStats from "@/components/economic-stats";
+import ComparisonTool from "@/components/comparison-tool";
+import Footer from "@/components/footer";
 
 export default function EconomicPage() {
   return (
@@ -58,8 +58,8 @@ export default function EconomicPage() {
                     transition={{ duration: 0.8, delay: 0.3 }}
                     viewport={{ once: true }}
                   >
-                    Phân tích chi tiết về sức mạnh kinh tế của Việt Nam qua các chỉ số GDP, FDI, xuất khẩu và tăng
-                    trưởng bền vững.
+                    Phân tích chi tiết về sức mạnh kinh tế của Việt Nam qua các
+                    chỉ số GDP, FDI, xuất khẩu và tăng trưởng bền vững.
                   </motion.p>
 
                   <motion.div
@@ -70,7 +70,9 @@ export default function EconomicPage() {
                     viewport={{ once: true }}
                   >
                     <div className="glass-dark px-6 py-3 rounded-lg">
-                      <p className="text-emerald-400 font-bold text-2xl">476.3B</p>
+                      <p className="text-emerald-400 font-bold text-2xl">
+                        476.3B
+                      </p>
                       <p className="text-gray-400 text-sm">GDP 2024 (USD)</p>
                     </div>
                     <div className="glass-dark px-6 py-3 rounded-lg">
@@ -95,18 +97,29 @@ export default function EconomicPage() {
                   <motion.div
                     className="absolute top-8 left-8 glass-dark p-6 rounded-2xl w-48"
                     animate={{ y: [0, -20, 0] }}
-                    transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
+                    transition={{
+                      duration: 4,
+                      repeat: Number.POSITIVE_INFINITY,
+                    }}
                   >
-                    <p className="text-emerald-400 font-bold text-lg">405.53B USD</p>
+                    <p className="text-emerald-400 font-bold text-lg">
+                      405.53B USD
+                    </p>
                     <p className="text-gray-400 text-sm">Xuất khẩu 2024</p>
                   </motion.div>
 
                   <motion.div
                     className="absolute bottom-8 right-8 glass-dark p-6 rounded-2xl w-48"
                     animate={{ y: [0, 20, 0] }}
-                    transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, delay: 0.5 }}
+                    transition={{
+                      duration: 4,
+                      repeat: Number.POSITIVE_INFINITY,
+                      delay: 0.5,
+                    }}
                   >
-                    <p className="text-cyan-400 font-bold text-lg">38.23B USD</p>
+                    <p className="text-cyan-400 font-bold text-lg">
+                      38.23B USD
+                    </p>
                     <p className="text-gray-400 text-sm">FDI đăng ký</p>
                   </motion.div>
 
@@ -116,7 +129,10 @@ export default function EconomicPage() {
                       scale: [1, 1.2, 1],
                       opacity: [0.3, 0.5, 0.3],
                     }}
-                    transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
+                    transition={{
+                      duration: 3,
+                      repeat: Number.POSITIVE_INFINITY,
+                    }}
                   />
                 </motion.div>
               </div>
@@ -150,5 +166,5 @@ export default function EconomicPage() {
         </main>
       </div>
     </div>
-  )
+  );
 }
