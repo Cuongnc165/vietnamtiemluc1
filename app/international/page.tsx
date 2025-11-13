@@ -183,11 +183,20 @@ export default function InternationalPage() {
               <h2 className="text-4xl font-bold text-yellow-400">
                 PHẦN 2️⃣: Giai đoạn "Phá thế" và Tạo dựng nền tảng (1991-2007)
               </h2>
-              <img
-                src="/hanhtrinh.jpg"
-                alt="Việt Nam"
-                className="rounded-2xl shadow-lg w-full object-cover"
-              />
+              <motion.div
+                className="mt-8 rounded-3xl overflow-hidden shadow-xl"
+                initial={{ opacity: 0, scale: 0.98 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                viewport={{ once: true, amount: 0.1 }}
+              >
+                <img
+                  src="/hanhtrinh.jpg"
+                  alt="Việt Nam"
+                  className="rounded-2xl shadow-lg w-full object-cover"
+                />
+              </motion.div>
+
               <p className="leading-relaxed text-lg">
                 Từ tình thế bị cô lập đó, Đảng ta đã có một bước chuyển chiến
                 lược. Bắt đầu từ tư duy "thêm bạn bớt thù" của Nghị quyết 13 Bộ
@@ -222,6 +231,20 @@ export default function InternationalPage() {
                 đã trở thành một thành viên đầy đủ, bình đẳng của cộng đồng quốc
                 tế.
               </p>
+            </motion.div>
+
+            <motion.div
+              className=" rounded-3xl overflow-hidden shadow-xl"
+              initial={{ opacity: 0, scale: 0.98 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              <img
+                src="/14nuoc.jpg"
+                alt="Việt Nam"
+                className="rounded-2xl shadow-lg w-full object-cover"
+              />
             </motion.div>
 
             {/* ===== PHẦN 3: KHẲNG ĐỊNH VỊ THẾ ===== */}
@@ -265,12 +288,6 @@ export default function InternationalPage() {
 
               {/* ✅ Đưa ảnh ra ngoài p */}
 
-              <img
-                src="/14nuoc.jpg"
-                alt="Việt Nam"
-                className="rounded-2xl shadow-lg w-full object-cover"
-              />
-
               <p className="leading-relaxed text-lg">
                 <strong>Thứ hai, Vị thế tại các Diễn đàn Đa phương:</strong>
                 <br />
@@ -290,11 +307,20 @@ export default function InternationalPage() {
                 Tại ASEAN, vai trò "trụ cột", Chủ tịch ASEAN 2020 dẫn dắt khối
                 vượt đại dịch, ký RCEP.
               </p>
-              <img
-                src="/vithe.jpg"
-                alt="Việt Nam"
-                className="rounded-2xl shadow-lg w-full object-cover"
-              />
+
+              <motion.div
+                className="mt-8 rounded-3xl overflow-hidden shadow-xl"
+                initial={{ opacity: 0, scale: 0.98 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                viewport={{ once: true, amount: 0.1 }}
+              >
+                <img
+                  src="/vithe.jpg"
+                  alt="Việt Nam"
+                  className="rounded-2xl shadow-lg w-full object-cover"
+                />
+              </motion.div>
 
               <p className="leading-relaxed text-lg">
                 <strong>Thứ ba, Vị thế Kinh tế:</strong>
